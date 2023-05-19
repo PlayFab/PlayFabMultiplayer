@@ -69,7 +69,7 @@ The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "
 2. Enable **FileSharing** for your application. This can be done through the **Info.plist** file of your application.
 3. Open the finder application on a Mac, locate your connected iOS device section, and select it.
 4. Click on the "Files" tab.
-4. Locate the installed application that uses PlayFab Party.
+4. Locate the installed application that uses PlayFab Multiplayer.
 5. Copy the `PlayFabMultiplayerLogger.json` file into this application's folder.
 6. Run the application.
 7. See the "logFolder" property of `PlayFabMultiplayerLogger.json`, and locate the output log.
