@@ -40,7 +40,7 @@ When this file is detected by the application at runtime it will use it to enabl
 2. `INFO` - less than everything, only important messages and errors
 3. `ERROR` - only errors
 
-The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "logAreaFlags_Log" are internal and users should not need to alter them.
+The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "logAreaFlags_Log" properties are internal and users should not need to alter them.
 
 ### iOS
 
