@@ -42,62 +42,22 @@ When this file is detected by the application at runtime it will use it to enabl
 
 The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "logAreaFlags_Log" properties are internal and users should not need to alter them.
 
-### iOS
+### iOS: Instructions
 
-#### Example configuration file
+1. Download the [`PlayFabMultiplayerLogger.json` file](iOS/PlayFabMultiplayerLogger.json) from this repo
+2. Connect the iOS device to a mac device.
+3. Enable **FileSharing** for your application. This can be done through the **Info.plist** file of your application.
+4. Open the finder application on a Mac, locate your connected iOS device section, and select it.
+5. Click on the "Files" tab.
+6. Locate the installed application that uses PlayFab Multiplayer.
+7. Copy the `PlayFabMultiplayerLogger.json` file into this application's folder.
+8. Run the application.
+9. Locate the output log inside the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
 
-```json
-{
-    "enabled": true,
-    "bufferSize": 262144,
-    "maxNumberOfItemsInBatch": 500,
-    "maxBatchWaitTimeInSeconds": 1,
-    "readBufferWaitTimeInMilliseconds": 1,
-    "logFolder": "/app_sandbox_storage/Documents/",
-    "logLevel": "INFO",
-    "muLogEnabled": true,
-    "maxLogFileSizeInMegabytes": 0,
-    "logAreaFlags_ApiInOut": -1,
-    "logAreaFlags_FnInOut": 18056,
-    "logAreaFlags_Log": -1
-}
-```
+### macOS: Instructions
 
-#### Instructions
-
-1. Connect the iOS device to a mac device.
-2. Enable **FileSharing** for your application. This can be done through the **Info.plist** file of your application.
-3. Open the finder application on a Mac, locate your connected iOS device section, and select it.
-4. Click on the "Files" tab.
-4. Locate the installed application that uses PlayFab Multiplayer.
-5. Copy the `PlayFabMultiplayerLogger.json` file into this application's folder.
-6. Run the application.
-7. See the "logFolder" property of `PlayFabMultiplayerLogger.json`, and locate the output log.
-
-### macOS
-
-#### Example configuration file
-
-```json
-{
-    "enabled": true,
-    "bufferSize": 1048576,
-    "maxNumberOfItemsInBatch": 500,
-    "maxBatchWaitTimeInSeconds": 1,
-    "readBufferWaitTimeInMilliseconds": 1,
-    "logFolder": "<any local path like /Users/<username>/Documents>",
-    "logLevel": "INFO",
-    "muLogEnabled": true,
-    "maxLogFileSizeInMegabytes": 0,
-    "logAreaFlags_ApiInOut": -1,
-    "logAreaFlags_FnInOut": 18056,
-    "logAreaFlags_Log": -1
-}
-```
-
-#### Instructions
-
-1. Enable **FileSharing** for your application, this can be done through the **Info.plist** file of your application.
-2. Copy the `PlayFabMultiplayerLogger.json` file into the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
-3. Run the application.
-4. Locate the output log inside the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
+1. Download the [`PlayFabMultiplayerLogger.json` file](macOS/PlayFabMultiplayerLogger.json) from this repo
+2. Enable **FileSharing** for your application, this can be done through the **Info.plist** file of your application.
+3. Copy the `PlayFabMultiplayerLogger.json` file into the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
+4. Run the application.
+5. Locate the output log inside the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
