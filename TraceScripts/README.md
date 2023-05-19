@@ -44,7 +44,7 @@ The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "
 
 ### iOS: Instructions
 
-1. Download the [`PlayFabMultiplayerLogger.json` file](iOS/PlayFabMultiplayerLogger.json) from this repo
+1. Download the [`PlayFabMultiplayerLogger.json` file](iOS/PlayFabMultiplayerLogger.json) from this repo.
 2. Connect the iOS device to a mac device.
 3. Enable **FileSharing** for your application. This can be done through the **Info.plist** file of your application.
 4. Open the finder application on a Mac, locate your connected iOS device section, and select it.
@@ -56,8 +56,8 @@ The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "
 
 ### macOS: Instructions
 
-1. Download the [`PlayFabMultiplayerLogger.json` file](macOS/PlayFabMultiplayerLogger.json) from this repo
+1. Download the [`PlayFabMultiplayerLogger.json` file](macOS/PlayFabMultiplayerLogger.json) from this repo.
 2. Enable **FileSharing** for your application, this can be done through the **Info.plist** file of your application.
-3. Copy the `PlayFabMultiplayerLogger.json` file into the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
+3. Copy the `PlayFabMultiplayerLogger.json` file into the `~/Documents` directory.
 4. Run the application.
 5. Locate the output log inside the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.

@@ -4,7 +4,7 @@
     "maxNumberOfItemsInBatch": 500,
     "maxBatchWaitTimeInSeconds": 1,
     "readBufferWaitTimeInMilliseconds": 1,
-    "logFolder": "<any local path like /Users/<username>/Documents>",
+    "logFolder": "~/Documents",
     "logLevel": "INFO",
     "muLogEnabled": true,
     "maxLogFileSizeInMegabytes": 0,
