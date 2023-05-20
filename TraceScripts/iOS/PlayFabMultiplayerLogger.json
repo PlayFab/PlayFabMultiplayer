@@ -1,0 +1,14 @@
+{
+    "enabled": true,
+    "bufferSize": 262144,
+    "maxNumberOfItemsInBatch": 500,
+    "maxBatchWaitTimeInSeconds": 1,
+    "readBufferWaitTimeInMilliseconds": 1,
+    "logFolder": "/app_sandbox_storage/Documents/",
+    "logLevel": "INFO",
+    "muLogEnabled": true,
+    "maxLogFileSizeInMegabytes": 0,
+    "logAreaFlags_ApiInOut": -1,
+    "logAreaFlags_FnInOut": 18056,
+    "logAreaFlags_Log": -1
+}

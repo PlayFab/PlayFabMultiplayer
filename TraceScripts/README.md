@@ -30,3 +30,34 @@ xbtrace /x:<xboxip> start advancedmp
 ```
 xbtrace /x:<xboxip> stop
 ```
+
+## iOS - macOS
+
+The PlayFab Multiplayer C++ library for iOS and macOS includes logging capabilities with a configurable verbosity level. Logging configuration is defined in `PlayFabMultiplayerLogger.json` file which can be deployed as an asset along with the application.
+
+When this file is detected by the application at runtime it will use it to enable logging as configured. The following verbosity levels are currently supported:
+1. `VERBOSE` - everything
+2. `INFO` - less than everything, only important messages and errors
+3. `ERROR` - only errors
+
+The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "logAreaFlags_Log" properties are internal and users should not need to alter them.
+
+### iOS: Instructions
+
+1. Download the [`PlayFabMultiplayerLogger.json` file](iOS/PlayFabMultiplayerLogger.json) from this repo.
+2. Connect the iOS device to a mac device.
+3. Enable **FileSharing** for your application. This can be done through the **Info.plist** file of your application.
+4. Open the finder application on a Mac, locate your connected iOS device section, and select it.
+5. Click on the "Files" tab.
+6. Locate the installed application that uses PlayFab Multiplayer.
+7. Copy the `PlayFabMultiplayerLogger.json` file into this application's folder.
+8. Run the application.
+9. Locate the output log inside the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
+
+### macOS: Instructions
+
+1. Download the [`PlayFabMultiplayerLogger.json` file](macOS/PlayFabMultiplayerLogger.json) from this repo.
+2. Enable **FileSharing** for your application, this can be done through the **Info.plist** file of your application.
+3. Copy the `PlayFabMultiplayerLogger.json` file into the `~/Documents` directory.
+4. Run the application.
+5. Locate the output log inside the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
