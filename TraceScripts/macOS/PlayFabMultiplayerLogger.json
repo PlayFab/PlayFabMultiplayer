@@ -5,7 +5,7 @@
     "maxBatchWaitTimeInSeconds": 1,
     "readBufferWaitTimeInMilliseconds": 1,
     "logFolder": "~/Documents",
-    "logLevel": "INFO",
+    "logLevel": "VERBOSE",
     "muLogEnabled": true,
     "maxLogFileSizeInMegabytes": 0,
     "logAreaFlags_ApiInOut": -1,
