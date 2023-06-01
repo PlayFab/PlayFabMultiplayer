@@ -64,19 +64,32 @@ The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "
 
 ### Android: Instructions
 
+> **Note: Gathering PlayFabMultiplayer Logs on Android only works for Android API 29 and below, due to Google's app-scoped storage permission changes for Android API 30 and beyond. This will be fixed in a future release.**
+
+> *Note: Relevant documentation for copying files to and from Android devices can be found [here](https://developer.android.com/tools/adb#copyfiles).*
+
 1. Download the [`PlayFabMultiplayerLogger.json` file](Android/PlayFabMultiplayerLogger.json) from this repo.
 2. Connect the Android device to host machine running Android Studio/Android Debug Bridge (adb).
 3. Enable USB Debugging on your Android device ([relevant documentation](https://developer.android.com/studio/debug/dev-options#Enable-debugging)).
 4. Open a new terminal that has ADB. Double-check that your device is readable from ADB with 
 ```
-adb devices -l
+$> adb devices -l
 ```
-5. Push the downloaded `PlayFabMultiplayerLogger.json` file to your Android device via
+5. Create your `config` directory on the Android device.
+
+    a. Please note that you need to create this directory before pushing the config file to your Android device due to ADB limitations.
+
+    b. You'll also need to create the directories one level at a time due to ADB limitations.
 ```
-adb push <filepath>/PlayFabMultiplayerLogger.json /sdcard/PlayFabLogs/config/
+$> adb shell mkdir /sdcard/PlayFabLogs/
+&> adb shell mkdir /sdcard/PlayFabLogs/config/
 ```
-6. Run the application. If using the default configuration of `PlayFabMultiplayerLogger.json`, logs should automatically be written to `/sdcard/PlayFabLogs/log/`. If not, logs will be written to the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
-7. Once you're satisfied with the accrued logs, you can retrieve them from the device via ADB as well. This will pull all log files from the specified directory on the Android device into your current directory on your computer.
+6. Push the downloaded `PlayFabMultiplayerLogger.json` file to your Android device via
 ```
-adb pull /sdcard/PlayFabLogs/log/ <- this backslash is VERY important
+$> adb push <filepath>/PlayFabMultiplayerLogger.json /sdcard/PlayFabLogs/config/
+```
+7. Run the application. If using the default configuration of `PlayFabMultiplayerLogger.json`, logs should automatically be written to `/sdcard/PlayFabLogs/log/`. If not, logs will be written to the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
+7. Once you're satisfied with the accrued logs, you can retrieve them from the device via ADB as well. This will pull the entire `log/` directory from the Android device into the target directory on your computer.
+```
+$> adb pull /sdcard/PlayFabLogs/log/ <target local directory>
 ```
