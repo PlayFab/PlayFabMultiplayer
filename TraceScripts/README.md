@@ -76,10 +76,8 @@ The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "
 $> adb devices -l
 ```
 5. Create your `config` directory on the Android device.
-
-    a. Please note that you need to create this directory before pushing the config file to your Android device due to ADB limitations.
-
-    b. You'll also need to create the directories one level at a time due to ADB limitations.
+    * Please note that you need to create this directory before pushing the config file to your Android device due to ADB limitations.
+    * You'll also need to create the directories one level at a time due to ADB limitations.
 ```
 $> adb shell mkdir /sdcard/PlayFabLogs/
 $> adb shell mkdir /sdcard/PlayFabLogs/config/
