@@ -35,7 +35,7 @@ xbtrace /x:<xboxip> stop
 
 The PlayFab Multiplayer C++ library for iOS, macOS, and Android includes logging capabilities with a configurable verbosity level. Logging configuration is defined in `PlayFabMultiplayerLogger.json` file which can be deployed alongside your application.
 
-When this file is detected by the application (and the PFMultiplayer library) at runtime, it will use it to enable logging as configured. The following verbosity levels are currently supported:
+When this file is detected by the PFMultiplayer library at runtime within your application, it will use it to enable logging as configured. The following verbosity levels are currently supported:
 1. `VERBOSE` - everything
 2. `INFO` - less than everything, only important messages and errors
 3. `ERROR` - only errors
@@ -52,7 +52,7 @@ The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "
 6. Locate the installed application that uses PlayFab Multiplayer.
 7. Copy the `PlayFabMultiplayerLogger.json` file into this application's folder.
 8. Run the application.
-9. Locate the output log inside the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
+9. Locate the output log inside the directory specified by the `logFolder` property of `PlayFabMultiplayerLogger.json`.
 
 ### macOS: Instructions
 
@@ -60,7 +60,7 @@ The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "
 2. Enable **FileSharing** for your application, this can be done through the **Info.plist** file of your application.
 3. Copy the `PlayFabMultiplayerLogger.json` file into the `~/Documents` directory.
 4. Run the application.
-5. Locate the output log inside the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
+5. Locate the output log inside the directory specified by the `logFolder` property of `PlayFabMultiplayerLogger.json`.
 
 ### Android: Instructions
 
@@ -70,7 +70,7 @@ The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "
 
 1. Download the [`PlayFabMultiplayerLogger.json` file](Android/PlayFabMultiplayerLogger.json) from this repo.
 2. Connect the Android device to host machine running Android Studio/Android Debug Bridge (adb).
-3. Enable USB Debugging on your Android device ([relevant documentation](https://developer.android.com/studio/debug/dev-options#Enable-debugging)).
+3. Enable USB Debugging on your Android device by following the ([Android USB Debugging documentation](https://developer.android.com/studio/debug/dev-options#Enable-debugging)).
 4. Open a new terminal that has ADB. Double-check that your device is readable from ADB with 
 ```
 $> adb devices -l
@@ -82,14 +82,16 @@ $> adb devices -l
     b. You'll also need to create the directories one level at a time due to ADB limitations.
 ```
 $> adb shell mkdir /sdcard/PlayFabLogs/
-&> adb shell mkdir /sdcard/PlayFabLogs/config/
+$> adb shell mkdir /sdcard/PlayFabLogs/config/
 ```
 6. Push the downloaded `PlayFabMultiplayerLogger.json` file to your Android device via
 ```
 $> adb push <filepath>/PlayFabMultiplayerLogger.json /sdcard/PlayFabLogs/config/
 ```
-7. Run the application. If using the default configuration of `PlayFabMultiplayerLogger.json`, logs should automatically be written to `/sdcard/PlayFabLogs/log/`. If not, logs will be written to the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
-7. Once you're satisfied with the accrued logs, you can retrieve them from the device via ADB as well. This will pull the entire `log/` directory from the Android device into the target directory on your computer.
+7. Run the application. If using the default configuration of `PlayFabMultiplayerLogger.json`, logs should automatically be written to `/sdcard/PlayFabLogs/log/`. If not, logs will be written to the directory specified by the `logFolder` property of `PlayFabMultiplayerLogger.json`.
+8. Once you've collected your logs, you can retrieve them from the device via ADB. The following ADB command will pull the entire `log/` directory from the Android device into the target directory on your computer.
+
+    Please note that if you've modified the `logFolder` property of your `PlayFabMultiplayerLogger.json`, then you'll need to update the ADB command accordingly.
 ```
 $> adb pull /sdcard/PlayFabLogs/log/ <target local directory>
 ```
