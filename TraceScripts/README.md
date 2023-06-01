@@ -31,11 +31,11 @@ xbtrace /x:<xboxip> start advancedmp
 xbtrace /x:<xboxip> stop
 ```
 
-## iOS - macOS
+## iOS, macOS, and Android
 
-The PlayFab Multiplayer C++ library for iOS and macOS includes logging capabilities with a configurable verbosity level. Logging configuration is defined in `PlayFabMultiplayerLogger.json` file which can be deployed as an asset along with the application.
+The PlayFab Multiplayer C++ library for iOS, macOS, and Android includes logging capabilities with a configurable verbosity level. Logging configuration is defined in `PlayFabMultiplayerLogger.json` file which can be deployed alongside your application.
 
-When this file is detected by the application at runtime it will use it to enable logging as configured. The following verbosity levels are currently supported:
+When this file is detected by the application (and the PFMultiplayer library) at runtime, it will use it to enable logging as configured. The following verbosity levels are currently supported:
 1. `VERBOSE` - everything
 2. `INFO` - less than everything, only important messages and errors
 3. `ERROR` - only errors
@@ -45,7 +45,7 @@ The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "
 ### iOS: Instructions
 
 1. Download the [`PlayFabMultiplayerLogger.json` file](iOS/PlayFabMultiplayerLogger.json) from this repo.
-2. Connect the iOS device to a mac device.
+2. Connect the iOS device to a Mac device.
 3. Enable **FileSharing** for your application. This can be done through the **Info.plist** file of your application.
 4. Open the finder application on a Mac, locate your connected iOS device section, and select it.
 5. Click on the "Files" tab.
@@ -61,3 +61,22 @@ The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "
 3. Copy the `PlayFabMultiplayerLogger.json` file into the `~/Documents` directory.
 4. Run the application.
 5. Locate the output log inside the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
+
+### Android: Instructions
+
+1. Download the [`PlayFabMultiplayerLogger.json` file](Android/PlayFabMultiplayerLogger.json) from this repo.
+2. Connect the Android device to host machine running Android Studio/Android Debug Bridge (adb).
+3. Enable USB Debugging on your Android device ([relevant documentation](https://developer.android.com/studio/debug/dev-options#Enable-debugging)).
+4. Open a new terminal that has ADB. Double-check that your device is readable from ADB with 
+```
+adb devices -l
+```
+5. Push the downloaded `PlayFabMultiplayerLogger.json` file to your Android device via
+```
+adb push <filepath>/PlayFabMultiplayerLogger.json /sdcard/PlayFabLogs/config/
+```
+6. Run the application. If using the default configuration of `PlayFabMultiplayerLogger.json`, logs should automatically be written to `/sdcard/PlayFabLogs/log/`. If not, logs will be written to the directory specified by the "logFolder" property of `PlayFabMultiplayerLogger.json`.
+7. Once you're satisfied with the accrued logs, you can retrieve them from the device via ADB as well. This will pull all log files from the specified directory on the Android device into your current directory on your computer.
+```
+adb pull /sdcard/PlayFabLogs/log/ <- this backslash is VERY important
+```
