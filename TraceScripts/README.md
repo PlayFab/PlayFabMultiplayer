@@ -66,7 +66,7 @@ The numeric values of the "logAreaFlags_ApiInOut", "logAreaFlags_FnInOut", and "
 
 > **Note: Gathering PlayFabMultiplayer Logs on Android only works for Android API 29 and below, due to Google's app-scoped storage permission changes for Android API 30 and beyond. This will be fixed in a future release.**
 
-> *Note: Relevant documentation for copying files to and from Android devices can be found [here](https://developer.android.com/tools/adb#copyfiles).*
+> Note: Relevant documentation for copying files to and from Android devices can be found [here](https://developer.android.com/tools/adb#copyfiles).
 
 1. Download the [`PlayFabMultiplayerLogger.json` file](Android/PlayFabMultiplayerLogger.json) from this repo.
 2. Connect the Android device to host machine running Android Studio/Android Debug Bridge (adb).
