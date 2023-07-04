@@ -31,7 +31,7 @@ xbtrace /x:<xboxip> start advancedmp
 xbtrace /x:<xboxip> stop
 ```
 
-## iOS, macOS, and Android
+## iOS, macOS, Android, and Linux
 
 The PlayFab Multiplayer C++ library for iOS, macOS, and Android includes logging capabilities with a configurable verbosity level. Logging configuration is defined in `PlayFabMultiplayerLogger.json` file which can be deployed alongside your application.
 
@@ -93,3 +93,29 @@ $> adb push <filepath>/PlayFabMultiplayerLogger.json /sdcard/PlayFabLogs/config/
 ```
 $> adb pull /sdcard/PlayFabLogs/log/ <target local directory>
 ```
+
+### Linux: Instructions
+
+1. Download the [`PlayFabMultiplayerLogger.json` file](Linux/PlayFabMultiplayerLogger.json) from this repo.
+2. Open a new terminal.
+3. Create your `config` directory on the Linux device.
+```
+$> mkdir $HOME/PlayFabLogs/config/
+```
+4. You will need to modify the `logFolder` property of the `PlayFabMultiplayerLogger.json` file.
+
+```
+"logFolder": "/home/<your-username>/PlayFabLogs/log/"
+```
+
+- Please replace `<your-username>` with your username on your Linux machine. If you are unsure of your username:
+```
+$> echo $HOME
+```
+
+5. Copy the `PlayFabMultiplayerLogger.json` file into your `$HOME/PlayFabLogs/config/` directory.
+```
+$> cp <filepath>/PlayFabMultiplayerLogger.json $HOME/PlayFabLogs/config/
+```
+6. Run the application.
+7. Run the application. If using the default configuration of `PlayFabMultiplayerLogger.json`, logs should automatically be written to `/home/<your-username>/PlayFabLogs/log/`. If not, logs will be written to the directory specified by the `logFolder` property of `PlayFabMultiplayerLogger.json`.
