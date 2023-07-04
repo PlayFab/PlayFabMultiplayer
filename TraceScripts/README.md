@@ -103,16 +103,13 @@ $> adb pull /sdcard/PlayFabLogs/log/ <target local directory>
 $> mkdir $HOME/PlayFabLogs/config/
 ```
 4. You will need to modify the `logFolder` property of the `PlayFabMultiplayerLogger.json` file.
-
 ```
 "logFolder": "/home/<your-username>/PlayFabLogs/log/"
 ```
-
 - Please replace `<your-username>` with your username on your Linux machine. If you are unsure of your username:
 ```
 $> echo $HOME
 ```
-
 5. Copy the `PlayFabMultiplayerLogger.json` file into your `$HOME/PlayFabLogs/config/` directory.
 ```
 $> cp <filepath>/PlayFabMultiplayerLogger.json $HOME/PlayFabLogs/config/
