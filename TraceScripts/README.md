@@ -97,12 +97,11 @@ $> adb pull /sdcard/PlayFabLogs/log/ <target local directory>
 ### Linux: Instructions
 
 1. Download the [`PlayFabMultiplayerLogger.json` file](Linux/PlayFabMultiplayerLogger.json) from this repo.
-2. Open a new terminal.
-3. Create your `config` directory on the Linux device.
+2. Create your `config` directory on the Linux device.
 ```
 $> mkdir $HOME/PlayFabLogs/config/
 ```
-4. You will need to modify the `logFolder` property of the `PlayFabMultiplayerLogger.json` file.
+3. You will need to modify the `logFolder` property of the `PlayFabMultiplayerLogger.json` file.
 ```
 "logFolder": "/home/<your-username>/PlayFabLogs/log/"
 ```
@@ -110,8 +109,8 @@ $> mkdir $HOME/PlayFabLogs/config/
 ```
 $> echo $HOME
 ```
-5. Copy the `PlayFabMultiplayerLogger.json` file into your `$HOME/PlayFabLogs/config/` directory.
+4. Copy the `PlayFabMultiplayerLogger.json` file into your `$HOME/PlayFabLogs/config/` directory.
 ```
 $> cp <filepath>/PlayFabMultiplayerLogger.json $HOME/PlayFabLogs/config/
 ```
-6. Run the application. If using the default configuration of `PlayFabMultiplayerLogger.json`, logs should automatically be written to `/home/<your-username>/PlayFabLogs/log/`.
+5. Run the application. Logs will be written to the directory specified by the `logFolder` property of `PlayFabMultiplayerLogger.json`.
