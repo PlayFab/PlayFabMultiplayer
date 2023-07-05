@@ -33,7 +33,7 @@ xbtrace /x:<xboxip> stop
 
 ## iOS, macOS, Android, and Linux
 
-The PlayFab Multiplayer C++ library for iOS, macOS, and Android includes logging capabilities with a configurable verbosity level. Logging configuration is defined in `PlayFabMultiplayerLogger.json` file which can be deployed alongside your application.
+The PlayFab Multiplayer C++ library for iOS, macOS, Android, and Linux includes logging capabilities with a configurable verbosity level. Logging configuration is defined in the `PlayFabMultiplayerLogger.json` file, which can be deployed alongside your application.
 
 When this file is detected by the PFMultiplayer library at runtime within your application, it will use it to enable logging as configured. The following verbosity levels are currently supported:
 1. `VERBOSE` - everything
@@ -114,5 +114,4 @@ $> echo $HOME
 ```
 $> cp <filepath>/PlayFabMultiplayerLogger.json $HOME/PlayFabLogs/config/
 ```
-6. Run the application.
-7. Run the application. If using the default configuration of `PlayFabMultiplayerLogger.json`, logs should automatically be written to `/home/<your-username>/PlayFabLogs/log/`. If not, logs will be written to the directory specified by the `logFolder` property of `PlayFabMultiplayerLogger.json`.
+6. Run the application. If using the default configuration of `PlayFabMultiplayerLogger.json`, logs should automatically be written to `/home/<your-username>/PlayFabLogs/log/`.
