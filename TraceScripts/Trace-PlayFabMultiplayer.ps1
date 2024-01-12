@@ -11,7 +11,7 @@ param(
 
     # Optional verbosity specification.
     [ValidateSet("Normal", "Verbose", "VerboseWithAllocations")]
-    [string]$Verbosity
+    [string]$Verbosity = "Normal"
     )
 
 $traceFileName = "pfm_trace_$TraceLabel.etl"
@@ -64,9 +64,19 @@ $netshStartCmd = "netsh trace start buffersize=512 overwrite=no tracefile=`"$tra
 
 Write-Host $netshStartCmd
 cmd /c $netshStartCmd
+if (!$?)
+{
+    Write-Host -foregroundcolor red "Failed to start trace."
+    exit 1
+}
 
 Read-Host "Run your scenario. Hit any key to stop the trace"
 
 cmd /c "netsh trace stop"
+if (!$?)
+{
+    Write-Host -foregroundcolor red "Failed to stop trace."
+    exit 1
+}
 
 Write-Host "Trace file written to $traceFileName"
