@@ -18,8 +18,8 @@ powershell -ExecutionPolicy RemoteSigned .\Trace-PlayFabMultiplayer.ps1 try1
 # A more advanced command with increased verbosity for "try2"
 powershell -ExecutionPolicy RemoteSigned .\Trace-PlayFabMultiplayer.ps1 try2 -Verbosity Verbose
 
-# An even more advanced command with increased verbosity for "try3"
-powershell -ExecutionPolicy RemoteSigned .\Trace-PlayFabMultiplayer.ps1 try3 -Verbosity Verbose -IncludePackets
+# Another  advanced command with normal verbosity and a pakcet capture
+powershell -ExecutionPolicy RemoteSigned .\Trace-PlayFabMultiplayer.ps1 try3 -IncludePackets
 ```
 - Run your game and get into the state to reproduce the issue
 - Hit enter in the command prompt to stop the trace. It will tell you the name of the generated `.etl` file which contains the trace.
