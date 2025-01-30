@@ -27,7 +27,7 @@ param(
     # Whether to include a raw packet capture and Windows OS networking stack
     # entries in the trace file.
     # NOTE: Using this switch may record networking activity on the device
-    # beyond that which directly involves PlayFab Party, and is not recommended
+    # beyond that which directly involves PlayFab, and is not recommended
     # unless specifically requested for additional support.
     # Defaults to false if not specified.
     [switch]$IncludePackets,
@@ -119,11 +119,11 @@ switch ($Verbosity)
 
 if ($IncludePackets)
 {
-    Write-Warning "A packet capture was requested with this trace. The resulting output file may therefore record Internet/networking activity on this device beyond just PlayFab Party communication, such as potentially sensitive web browser or private local network connections."
+    Write-Warning "A packet capture was requested with this trace. The resulting output file may therefore record Internet/networking activity on this device beyond just PlayFab communication, such as potentially sensitive web browser or private local network connections."
     Write-Host ""
     Write-Host "Please close all unneeded background applications, and never store the resulting output file in an insecure location."
     Write-Host ""
-    Write-Host "Be aware that providing the output file to Microsoft support agents may allow them visibility of such networking activities. However only the minimum information required for PlayFab Party support will be used, and no parts will ever be shared with anyone for any reason. All records will be deleted once the support issue has been resolved."
+    Write-Host "Be aware that providing the output file to Microsoft support agents may allow them visibility of such networking activities. However only the minimum information required for PlayFab support will be used, and no parts will ever be shared with anyone for any reason. All records will be deleted once the support issue has been resolved."
     Write-Host ""
     Read-Host "To abort, press Control-C. Otherwise, press 'Enter'"
     $captureString = "capture=yes"
@@ -144,7 +144,7 @@ if ($IncludePackets)
     # WS NR
     $osNetworkingProviders += " provider={B923F87A-B069-42B5-BD32-35623ABA1C48} keywords=0xFFFFFFFFFFFFFFFF level=5"
     # WebIO
-    $osNetworkingProviders += " provider={50B3E73C-9370-461D-BB9F-26F32D68887D8} keywords=0xFFFFFFFFFFFFFFFF level=5"
+    $osNetworkingProviders += " provider={50B3E73C-9370-461D-BB9F-26F32D68887D} keywords=0xFFFFFFFFFFFFFFFF level=5"
     # WebIO WPP
     $osNetworkingProviders += " provider={08F93B14-1608-4a72-9CFA-457EECEDBBA7} keywords=0xFFFFFFFFFFFFFFFF level=5"
     # WinHttp
