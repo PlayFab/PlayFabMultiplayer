@@ -22,7 +22,7 @@ param(
 
     # Optional verbosity specification.
     [ValidateSet("Normal", "Verbose", "VerboseWithAllocations")]
-    [string]$Verbosity = "Normal"
+    [string]$Verbosity = "Normal",
 
     # Whether to include a raw packet capture and Windows OS networking stack
     # entries in the trace file.
