@@ -143,6 +143,14 @@ if ($IncludePackets)
     $osNetworkingProviders += " provider={1C95126E-7EEA-49A9-A3FE-A378B03DDB4D} keywords=0xFFFFFFFFFFFFFFFF level=5"
     # WS NR
     $osNetworkingProviders += " provider={B923F87A-B069-42B5-BD32-35623ABA1C48} keywords=0xFFFFFFFFFFFFFFFF level=5"
+    # WebIO
+    $osNetworkingProviders += " provider={50B3E73C-9370-461D-BB9F-26F32D68887D8} keywords=0xFFFFFFFFFFFFFFFF level=5"
+    # WebIO WPP
+    $osNetworkingProviders += " provider={08F93B14-1608-4a72-9CFA-457EECEDBBA7} keywords=0xFFFFFFFFFFFFFFFF level=5"
+    # WinHttp
+    $osNetworkingProviders += " provider={7d44233d-3055-4b9c-ba64-0d47ca40a232} keywords=0xFFFFFFFFFFFFFFFF level=5"
+    # WinHttp WPP
+    $osNetworkingProviders += " provider={B3A7698A-0C45-44DA-B73D-E181C9B5C8E6} keywords=0xFFFFFFFFFFFFFFFF level=5"
 }
 else
 {
