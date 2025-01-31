@@ -18,7 +18,7 @@ powershell -ExecutionPolicy RemoteSigned .\Trace-PlayFabMultiplayer.ps1 try1
 # A more advanced command with increased verbosity for "try2"
 powershell -ExecutionPolicy RemoteSigned .\Trace-PlayFabMultiplayer.ps1 try2 -Verbosity Verbose
 
-# Another  advanced command with normal verbosity and a pakcet capture
+# Another advanced command with normal verbosity and a packet capture
 powershell -ExecutionPolicy RemoteSigned .\Trace-PlayFabMultiplayer.ps1 try3 -IncludePackets
 ```
 - Run your game and get into the state to reproduce the issue
